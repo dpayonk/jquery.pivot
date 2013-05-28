@@ -288,13 +288,13 @@
                 }
 
                 //clean up previous event handlers
-                $obj.find(".pivot .foldunfold").die('click');
-                $obj.find(".resultcell").die('click');
+                $obj.find(".pivot .foldunfold").off('click');
+                $obj.find(".resultcell").off('click');
 
                 //set up eventhandlers
-                $obj.find(".pivot .foldunfold").live('click', foldunfold);
+                $obj.find(".pivot .foldunfold").on('click', foldunfold);
                 if (opts.onResultCellClicked) {
-                    $obj.find(".resultcell").live('click', resultCellClicked);
+                    $obj.find(".resultcell").on('click', resultCellClicked);
                 }
 
                 makeCollapsed(adapter, $obj);
